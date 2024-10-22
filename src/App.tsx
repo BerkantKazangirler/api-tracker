@@ -1,13 +1,31 @@
 import { GoChevronRight } from "react-icons/go";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const position = [51.505, -0.09]; // Londra koordinatları
+  const [Ip, setIp] = useState(String);
+  const [tempText, setTempText] = useState(String);
+
+  enum Errors {
+    emptyInput = "Girdiğiniz değer boş veya hatalı",
+  }
+
+  function toggleIp() {
+    if (tempText == "" || tempText == " ") {
+      toast.error(Errors.emptyInput);
+      return;
+    }
+    setIp(tempText);
+  }
 
   return (
     <>
       <div className="w-full h-full flex flex-col">
+        <ToastContainer />
         <div className="flex flex-col">
           <img src={"./assets/pattern.png"} className="w-full max-h-[350px]" />
           <div className="absolute w-full items-center flex flex-col gap-6">
@@ -15,14 +33,22 @@ function App() {
               IP Adress Tracker
             </span>
             <div className="flex flex-row">
-              <input
-                type="text"
-                placeholder="Search for any IP adress or domain"
-                className="w-[550px] px-4 py-4 rounded-l-xl border border-black"
-              />
-              <button className="bg-black text-white px-3 rounded-r-xl">
-                <GoChevronRight className="text-2xl" />
-              </button>
+              <form action="#" className="flex justify-center">
+                <input
+                  type="text"
+                  onChange={(e) => setTempText(e.currentTarget.value)}
+                  placeholder="Search for any IP adress or domain"
+                  className="w-[550px] px-4 py-4 rounded-l-xl border border-black"
+                />
+                <button
+                  type="submit"
+                  onSubmit={() => toggleIp()}
+                  onClick={() => toggleIp()}
+                  className="bg-black text-white px-3 rounded-r-xl"
+                >
+                  <GoChevronRight className="text-2xl" />
+                </button>
+              </form>
             </div>
             <div className="bg-white border border-black/20 h-44 w-[1350px] rounded-xl mt-10 flex flex-row z-10">
               <div className="p-8 flex flex-col gap-2 w-64">
