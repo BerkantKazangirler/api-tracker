@@ -2,7 +2,7 @@
 
 IP Tracker application made using React - Typescript - Tailwind
 
-Apps used:
+##Apps used:
 
 - [Tailwindcss](https://tailwindcss.com/) 
 - [React-Vite](https://vite.dev/guide/)
@@ -11,47 +11,6 @@ Apps used:
 - [classnames](https://www.npmjs.com/package/classnames)
 - [react-icons](https://react-icons.github.io/react-icons/)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
 # Preview Project
 - Normal Page ( No Data Extracted / Blank Page )
 ![image](https://github.com/user-attachments/assets/5219b0cb-e502-4ea9-82d3-5e5e9c82ee41)
