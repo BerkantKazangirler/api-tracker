@@ -2,21 +2,20 @@ import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-interface props {
-  position: string;
-  data: string[];
-}
+function Map(positionn: string[], dataa: string) {
+  const [position, setPosition] = useState<any>([51.505, -0.09]);
 
-function Map({ position, data }: props) {
+  const [data, setData] = useState<DataTypes | null>(null);
+  interface DataTypes {
+    country: string;
+    city: string;
+  }
+
   useEffect(() => {
-    fetchPosts();
-    fetchUsers();
-
-    const local = localStorage.getItem("likedposts");
-    if (local == null || local == "") {
-      localStorage.setItem("likedposts", "false");
-    }
+    setData(dataa);
+    setPosition(positionn);
   }, []);
+
   return (
     <MapContainer className="w-full h-full" center={position} zoom={7}>
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

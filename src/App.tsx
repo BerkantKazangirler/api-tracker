@@ -8,7 +8,7 @@ import classNames from "classnames";
 
 function App() {
   const [Ip, setIp] = useState(String);
-  const [position, setPosition] = useState([51.505, -0.09]);
+  const [position, setPosition] = useState<any>([51.505, -0.09]);
 
   const [data, setData] = useState<DataTypes | null>(null);
   interface DataTypes {
@@ -32,12 +32,12 @@ function App() {
 
   enum Errors {
     emptyInput = "Girdiğiniz değer boş veya hatalı",
-    noData = "Veri alınırken bir hata oluştu",
+    noData = "Girdiğiniz IP Adresi hatalı",
     sameData = "Girmeye çalıştığınız değer aynı",
   }
 
   function toggleIp() {
-    if (tempText.trim() == "") {
+    if (tempText.trim() == "" || tempText == " ") {
       toast.error(Errors.emptyInput);
       return;
     }
@@ -59,6 +59,7 @@ function App() {
           setIsLoading(false);
         } else {
           toast.error(Errors.noData);
+          setIsLoading(true);
         }
       });
   }
