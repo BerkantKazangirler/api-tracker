@@ -2,7 +2,7 @@
 
 IP Tracker application made using React - Typescript - Tailwind
 
-##Apps used:
+Apps used:
 
 - [Tailwindcss](https://tailwindcss.com/) 
 - [React-Vite](https://vite.dev/guide/)
