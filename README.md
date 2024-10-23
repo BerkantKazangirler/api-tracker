@@ -48,3 +48,6 @@ export default tseslint.config({
   },
 })
 ```
+
+![image](https://github.com/user-attachments/assets/5219b0cb-e502-4ea9-82d3-5e5e9c82ee41)
+
