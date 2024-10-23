@@ -5,7 +5,11 @@ IP Tracker application made using React - Typescript - Tailwind
 Apps used:
 
 - [Tailwindcss](https://tailwindcss.com/) 
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React-Vite](https://vite.dev/guide/)
+- [leaflet-map](https://react-leaflet.js.org/)
+- [toastify](https://www.npmjs.com/package/react-toastify)
+- [classnames](https://www.npmjs.com/package/classnames)
+- [react-icons](https://react-icons.github.io/react-icons/)
 
 ## Expanding the ESLint configuration
 
