@@ -48,6 +48,9 @@ export default tseslint.config({
   },
 })
 ```
-
+# Preview Project
+- Normal Page ( No Data Extracted / Blank Page )
 ![image](https://github.com/user-attachments/assets/5219b0cb-e502-4ea9-82d3-5e5e9c82ee41)
 
+- Data extracted ( Data Printing )
+![image](https://github.com/user-attachments/assets/89518841-1cad-440d-88e0-2bdc4051d5cd)
