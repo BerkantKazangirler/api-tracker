@@ -12,7 +12,7 @@ function Map(positionn: string[], dataa: string) {
   }
 
   useEffect(() => {
-    setData(dataa);
+    setData(data);
     setPosition(positionn);
   }, []);
 
