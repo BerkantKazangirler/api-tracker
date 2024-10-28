@@ -43,11 +43,13 @@ function App() {
         if (res.status === "success") {
           setPosition([res.lat, res.lon]);
           setIsLoading(false);
+          return;
         } else {
           toast.error(Errors.noData);
           setIsLoading(true);
         }
       });
+    setIsLoading(true);
   }
 
   return (
