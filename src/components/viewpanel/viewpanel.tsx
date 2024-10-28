@@ -20,8 +20,8 @@ function ViewPanel({ data }: props) {
         <span className="font-medium text-gray-500 text-xs lg:text-start text-center">
           LOCATION
         </span>
-        <div className="flex flex-col">
-          <div className="flex flex-row gap-1 lg:w-fit w-full">
+        <div className="flex flex-col mx-auto">
+          <div className="flex flex-row gap-1 w-fit">
             <span className="2xl:text-2xl xl:text-xl lg:text-lg font-medium lg:w-fit w-full lg:text-start text-center">
               {data ? data.city : "Veri Yok"}
             </span>

@@ -85,7 +85,7 @@ function App() {
                   type="text"
                   onChange={(e) => setTempText(e.currentTarget.value)}
                   placeholder="Search for any IP adress or domain"
-                  className="lg:w-[550px] w-max px-4 py-4 rounded-l-xl border border-black z-20"
+                  className="lg:w-[550px] w-[300px] px-4 py-4 rounded-l-xl border border-black z-20"
                 />
                 <button
                   type="submit"
@@ -98,7 +98,7 @@ function App() {
               </form>
             </div>
             {!isLoading && (
-              <div className="bg-white border border-black/20 2xl:h-44 lg:h-36 h-max 2xl:w-[1250px] xl:w-[1000px] lg:w-[800px] w-fit rounded-xl lg:mt-10 flex lg:flex-row flex-col z-10">
+              <div className="bg-white border border-black/20 2xl:h-44 lg:h-36 h-max 2xl:w-[1250px] xl:w-[1000px] lg:w-[800px] w-[500px] rounded-xl lg:mt-10 flex lg:flex-row flex-col z-10">
                 <ViewPanel data={data} />
               </div>
             )}
