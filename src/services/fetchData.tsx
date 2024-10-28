@@ -1,4 +1,4 @@
-import { Errors } from "../components/types";
+import { Errors } from "../types";
 
 export function fetchData(ip: string) {
   return fetch(`http://ip-api.com/json/${ip}`)

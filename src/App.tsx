@@ -4,7 +4,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import classNames from "classnames";
 import { Map, ViewPanel, Search } from "./components";
-import { Errors, IPTrackerI } from "./components/types";
+import { Errors, IPTrackerI } from "./types";
 import { fetchData } from "./services/fetchData";
 
 function App() {
