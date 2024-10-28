@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import classNames from "classnames";
 import { Map, ViewPanel } from "./components";
 import { IPTrackerI } from "./components/types";
+import { fetchData } from "./services/fetchData";
 
 function App() {
   const [Ip, setIp] = useState(String);
@@ -32,24 +33,20 @@ function App() {
       return;
     }
     setIp(tempText);
-    fetchData(tempText);
-  }
-
-  function fetchData(ip: string) {
-    fetch(`http://ip-api.com/json/${ip}`)
-      .then((res) => res.json())
-      .then((res) => {
-        setData(res);
-        if (res.status === "success") {
-          setPosition([res.lat, res.lon]);
-          setIsLoading(false);
-          return;
-        } else {
-          toast.error(Errors.noData);
-          setIsLoading(true);
-        }
-      });
     setIsLoading(true);
+
+    const data = fetchData(tempText);
+    console.log(data);
+
+    fetchData(tempText).then(({ data, error }) => {
+      if (!error) {
+        setData(data);
+        setPosition([data.lat, data.lon]);
+        setIsLoading(false);
+      } else {
+        setIsLoading(true);
+      }
+    });
   }
 
   return (
