@@ -1,3 +1,9 @@
+export enum Errors {
+  emptyInput = "Girdiğiniz değer boş veya hatalı",
+  noData = "Girdiğiniz IP Adresi hatalı",
+  sameData = "Girmeye çalıştığınız değer aynı",
+}
+
 export interface IPTrackerI {
   status: string;
   country: string;
